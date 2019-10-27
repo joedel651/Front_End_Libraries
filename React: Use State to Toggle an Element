@@ -1,0 +1,39 @@
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // example of how to bind in the constructor
+ this.toggleVisibility = this.toggleVisibility.bind(this);
+    // change code above this line
+  }
+  // change code below this line
+  //example of a setting the state
+toggleVisibility() {
+    this.setState(state => {
+      if (state.visibility === true) {
+         return { visibility: false };
+       } else {
+         return { visibility: true };
+      }
+    });
+  }
+  // change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+};
