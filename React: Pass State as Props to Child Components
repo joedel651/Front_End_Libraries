@@ -1,0 +1,30 @@
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'CamperBot'
+    }
+  }
+  render() {
+    return (
+       <div>
+       //set name equal to the name in the constructor
+         <Navbar /* your code here */name = {this.state.name} />
+       </div>
+    );
+  }
+};
+
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div>
+    //this.props calls the object in navbar class and the .name addresses the specific property
+      <h1>Hello, my name is: {/* your code here */this.props.name} </h1>
+    </div>
+    );
+  }
+};
