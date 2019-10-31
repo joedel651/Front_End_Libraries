@@ -1,0 +1,48 @@
+class Results extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <h1>
+      {
+        /* change code here */
+        //define the property you want
+        //the lesson requireds it to be called fiftyFify
+        this.props.fiftyFifty
+      }
+      </h1>
+    )
+  };
+};
+
+class GameOfChance extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 1
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      //set count equal to the value of the current object plus 1
+      counter: this.state.counter + 1 // change code here
+    });
+  }
+  render() {
+    //create an expression to make odds 50/50
+    const expression = Math.random() >= .5; // change code here
+    return (
+      <div>
+        <button onClick={this.handleClick}>Play Again</button>
+        { /* change code below this line */ }
+        //ternary operators are easier than if else in react
+        //if true print you win else false
+       {(expression == 1) ?  <Results fiftyFifty="You Win!" /> : <Results fiftyFifty= "You Lose!" />}
+        { /* change code above this line */ }
+        <p>{'Turn: ' + this.state.counter}</p>
+      </div>
+    );
+  }
+};
