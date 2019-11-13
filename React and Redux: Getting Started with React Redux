@@ -1,0 +1,17 @@
+class DisplayMessages extends React.Component {
+  // change code below this line
+  //example of how to set up a constructor in React
+  constructor(props){
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+
+    }
+  }
+
+  // change code above this line
+  render() {
+    return <div />
+  }
+};
